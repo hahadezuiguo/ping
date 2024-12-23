@@ -1,0 +1,139 @@
+<template>
+  <transition name="appear">
+    <section class="toast" v-if="show">
+      <div v-html="msg" class="toast-con"></div>
+    </section>
+  </transition>
+</template>
+
+<script type="text/ecmascript-6">
+export default {
+  name: "toast",
+  data() {
+    return {
+      show: false,
+      msg: '',
+      time: 1000
+    }
+  },
+  methods: {
+    async open() {
+      if (this.show) {
+        return;
+      }
+      this.show = true;
+      let result = await this.close();
+      return result;
+    },
+    close() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          this.show = false;
+          resolve(true);
+        }, this.time);
+      });
+    }
+  }
+}
+</script>
+
+<style lang="less" scoped>
+.default-message {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.7);
+
+  .default-message-title {
+    color: #333;
+    margin: 0;
+    line-height: 1.5;
+    font-size: 18px;
+    min-height: 18px;
+    padding-top: 20px;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    cursor: move;
+    text-align: center;
+  }
+
+  .default-message-content {
+    width: 85%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background-color: #fff;
+    border-radius: 6px;
+    transition: all 0.2s ease-in;
+    color: #999;
+    font-size: 18px;
+  }
+
+  .default-message-value {
+    padding: 28px 18px;
+    text-align: center;
+    position: relative;
+    color: #999;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(102, 102, 102, 1);
+  }
+  .default-message-btns {
+    // border-top: 1px solid #ddd;
+    display: flex;
+    height: 60px;
+    position: relative;
+    &:after {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 1px;
+      transform: scaleY(0.5);
+      background: #ddd;
+    }
+    .default-message-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      padding: 0 3px;
+    }
+    .default-message-submit {
+      color: #26a2ff;
+    }
+    .default-message-cancle {
+      color: #999;
+      position: relative;
+      &:after {
+        position: absolute;
+        content: "";
+        display: inline-block;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 1px;
+        transform: scaleX(0.5);
+        background: #ddd;
+      }
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+</style>

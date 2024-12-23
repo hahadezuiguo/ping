@@ -1,0 +1,42 @@
+.box {
+  background-color: red;
+  padding: 20px;
+}
+.box .title {
+  background-color: red;
+  font-size: 18px;
+  color: green;
+}
+.tab_bold {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+}
+.tabs {
+  height: 200px;
+}
+.tabs :deep(.el-tabs__item) {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+.tabs :deep(.el-tabs__item):hover {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+}
+.tabs :deep(.el-tabs__item.is-active) {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+}
+.tabs .el-tab-pane {
+  padding: 10px 20px;
+  color: white;
+  text-align: start;
+  justify-content: start;
+}
+.tabs .el-tab-pane:hover {
+  color: red;
+}

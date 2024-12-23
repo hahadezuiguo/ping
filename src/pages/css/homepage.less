@@ -1,0 +1,44 @@
+.box {
+    background-color: red;
+    padding: 20px;
+
+    .title {
+        background-color: red;
+        font-size: 18px;
+        color: green;
+    }
+
+
+}
+.tab_bold {
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+}
+.tabs {
+    height: 200px;
+
+    :deep(.el-tabs__item) {
+        .tab_bold();
+        color: white;
+        &:hover {
+            .tab_bold();
+        }
+    }
+    :deep(.el-tabs__item.is-active) {
+        .tab_bold();
+    }
+    // :deep(.el-tabs__item is-active) {
+    //     color: red
+    // }
+    .el-tab-pane {
+        padding: 10px 20px;
+        color: white;
+        text-align: start;
+        justify-content: start;
+
+        &:hover {
+            color: red;
+        }
+    }
+}

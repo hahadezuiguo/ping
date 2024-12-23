@@ -1,0 +1,93 @@
+.default-message {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.7);
+}
+.default-message .default-message-title {
+  color: #333;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 18px;
+  min-height: 18px;
+  padding-top: 20px;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  cursor: move;
+  text-align: center;
+}
+.default-message .default-message-content {
+  width: 85%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  background-color: #fff;
+  border-radius: 6px;
+  transition: all 0.2s ease-in;
+  color: #999;
+  font-size: 18px;
+}
+.default-message .default-message-value {
+  padding: 28px 18px;
+  position: relative;
+  color: #999;
+  text-align: center;
+  font-size: 14px;
+  color: #666666;
+}
+.default-message .default-message-btns {
+  display: flex;
+  height: 60px;
+  position: relative;
+}
+.default-message .default-message-btns:after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  transform: scaleY(0.5);
+  background: #ddd;
+}
+.default-message .default-message-btns .default-message-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding: 0 3px;
+}
+.default-message .default-message-btns .default-message-submit {
+  color: #26a2ff;
+}
+.default-message .default-message-btns .default-message-cancle {
+  color: #999;
+  position: relative;
+}
+.default-message .default-message-btns .default-message-cancle:after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  transform: scaleX(0.5);
+  background: #ddd;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

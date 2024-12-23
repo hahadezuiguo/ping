@@ -1,0 +1,19 @@
+.navbar {
+  background-color: white;
+  height: 50px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .icon {
+  height: 30px;
+  margin-left: 10px;
+  aspect-ratio: 1/1;
+  background-color: red;
+}
+.navbar .title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+}
