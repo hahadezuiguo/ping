@@ -77,5 +77,6 @@ export default {
 
 <style lang="less" scoped>
     @import '../css/homepage.less';
+    
 
 </style>
