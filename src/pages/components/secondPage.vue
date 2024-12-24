@@ -1,7 +1,5 @@
-
-
 <template>
-    <navbar :title="'Second Page'" :showBack="true"  />
+    <navbar :title="'Second Page'" :showBack="true" />
     <div class="box" @click="handleClick()">
         <div class="title" @click="handleClick()">
             {{ content }}
@@ -24,15 +22,15 @@ export default {
     },
     data() {
         return {
-            detailId : "0",
-            content : "1231231231231"
+            detailId: "0",
+            content: "1231231231231"
         }
     },
     methods: {
         handleClick() {
             this.content = "456456456"
             console.log("handleClick")
-            
+
         },
         showWindow() {
             const testWindow = WebviewWindow.get("testWindow");
@@ -40,16 +38,25 @@ export default {
     },
     watch: {
         data(newValue, oldValue) {
-            if (newValue.id!== oldValue.id) {
+            if (newValue.id !== oldValue.id) {
                 this.detailId = newValue.id
             }
-            
+
         }
     },
 }
 
 </script>
 
-<style lang="less" scoped>
-    @import '../css/secondPage.less';
+<style scoped>
+.box {
+    background-color: green;
+    padding: 20px;
+}
+
+.box .title {
+    background-color: green;
+    font-size: 18px;
+    color: blue;
+}
 </style>
