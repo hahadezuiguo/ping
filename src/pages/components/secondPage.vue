@@ -54,6 +54,7 @@ export default {
     padding: 20px;
 }
 
+
 .box .title {
     background-color: green;
     font-size: 18px;
